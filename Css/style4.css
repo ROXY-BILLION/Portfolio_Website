@@ -1,0 +1,140 @@
+:root {
+  --primary: #0a192f;
+  --accent: #64ffda;
+  --text: #333;
+  --bg: #f4f4f4;
+}
+
+* {
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+body { 
+    font-family: "Poppins", sans-serif; 
+    background: var(--bg); 
+    color: var(--text); 
+}
+.logo>img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+header {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  background: var(--primary); 
+  color: white; 
+  padding: 1rem 2rem;
+}
+header nav a {
+  color: var(--accent); 
+  margin-left: 1rem; 
+  text-decoration: none; 
+  transition: 0.3s;
+}
+header nav a:hover, header nav a.active { 
+    color: white; 
+}
+
+.menu-toggle { 
+    display: none; 
+    font-size: 1.8rem; 
+    cursor: pointer; 
+}
+
+footer { 
+    text-align: center; 
+    background: var(--primary); 
+    color: white; 
+    padding: 1rem; 
+    margin-top: 2rem; 
+}
+ 
+    /* 🔹 Projects container (6 rows stacked vertically) */
+    .projects {
+      display: flex;
+      flex-direction: column;
+      gap: 50px; /* space between each project section */
+    }
+
+    /* 🔹 Each Project Box */
+    .project {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      padding: 25px 30px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .project h2 {
+      font-size: 1.8rem;
+      color: #0077ff;
+      text-decoration: underline;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    /* 🔹 Images grid inside each project */
+    .project figure {
+      display: inline-block;
+      width: 22%;
+      margin: 1%;
+      text-align: center;
+      vertical-align: top;
+    }
+
+    .project img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .project img:hover {
+      transform: scale(1.05);
+    }
+
+    figcaption {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #333;
+      margin-top: 10px;
+  }
+
+
+/* Responsive */
+@media(max-width:768px){
+  header nav { 
+    display: none; 
+    flex-direction: column; 
+    background: var(--primary); 
+  }
+  header nav.active {
+     display: flex; 
+  }
+  .menu-toggle { 
+    display: block; 
+  }
+}
+    /* 🔹 Responsive adjustments */
+    @media (max-width: 1024px) {
+      .project figure {
+        width: 45%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .project figure {
+        width: 100%;
+      }
+    }
