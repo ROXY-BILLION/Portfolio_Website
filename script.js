@@ -4,6 +4,15 @@ const nav = document.getElementById("nav");
 if(menuToggle){
   menuToggle.addEventListener("click", ()=> nav.classList.toggle("active"));
 }
+// Smooth scroll for internal links
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector(link.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
 
 // Contact form validation
 const form = document.getElementById("contactForm");
